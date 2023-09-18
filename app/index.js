@@ -37,7 +37,7 @@ d.addEventListener('DOMContentLoaded', function () {
         btn: e.target, // elemento al que apunta el evento
         c: ['icon-toggle', 'icon-close'], // clases a reemplazar
         el: nav_menu, // elemento a modificar
-        className, // corresponde a mismo nombre de clave y valor
+        className, // mismo nombre de clave y valor
     } ) );
-    
+
 } )
