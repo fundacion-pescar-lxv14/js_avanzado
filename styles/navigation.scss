@@ -1,0 +1,16 @@
+/* Barra de Navegacion */
+.nav{
+    @extend .d-flex, .fj-space-between, .ai-center, .fw-wrap, .p-3;
+    background: linear-gradient($first, $second);
+    button.icon-toggle{
+        @extend .d-md-none;
+    }
+    &-menu{
+        @extend .d-md-flex, .col-12, .m-0, .p-0, .g-2, .list-unstyled;
+        max-height: 0;
+        overflow: hidden;
+        &.active{
+            max-height: 100vh;
+        }
+    }
+}
