@@ -1,0 +1,73 @@
+$first: #da3;
+$second: #fea;
+
+$col: 12;
+
+$media: 
+    sm 576px,
+    md 768px,
+    lg 992px,
+    xl 1200px,
+    xxl 1400px,
+;
+
+$boxes: 
+    m   margin,
+    br  border-radius,
+    b   border-width,
+    p   padding,
+    o   outline,
+    g   gap,
+    fs  font-size,
+    col width,
+;
+$dir: start, center, end, space-around, space-between, space-evenly;
+$flexbox: (
+    d: ( display: (none, inline, block, inline-block, flex, inline-flex, grid, inline-grid, table,) ),
+    fj: ( justify-content: ($dir) ),
+    ai: ( align-items: ($dir) ),
+    fw: ( flex-wrap: (wrap, nowrap, wrap-reverse)) ,
+)
+;
+
+@each $vn, $vw in $media{
+
+@each $prop, $attributes in $flexbox{
+@each $attr, $values in $attributes{
+@each $v in $values{
+    @if $vw <= 576px{
+        .#{$prop}-#{$v} { #{$attr}: $v; }
+    }
+    @else {
+    @media screen and (min-width: $vw) {
+        .#{$prop}-#{$vn}-#{$v} { #{$attr}: $v; }
+    } }
+} } }
+
+@each $prop, $attr in $boxes {
+/* Propiedades de #{$attr} */
+@for $i from 0 through $col {
+    @if $vw <= 576px {
+        @if $prop == col{
+            .#{$prop}-#{$i} { width: percentage($i / $col) }
+        }
+        @else {
+            .#{$prop}-#{$i} { #{$attr}: $i * .25rem; } 
+        }
+    }
+    @else {
+        @media screen and (min-width: $vw) {
+            @if $prop == col{
+                .#{$prop}-#{$vn}-#{$i} { width: percentage($i / $col) }
+            }
+            @else {
+                .#{$prop}-#{$vn}-#{$i} { #{$attr}: $i * .25rem; } 
+            }
+        }
+    }
+} }
+
+}
+.list-unstyled{
+    list-style: none;
+}
