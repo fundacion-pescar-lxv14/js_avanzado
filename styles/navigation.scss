@@ -1,6 +1,7 @@
 /* Barra de Navegacion */
 .nav{
-    @extend .d-flex, .fj-space-between, .ai-center, .fw-wrap, .p-3;
+    @extend .d-flex, .fj-space-between, .ai-center, .fw-wrap, .p-sticky, .p-3;
+    top: 0;
     background: linear-gradient($first, $second);
     button.icon-toggle{
         @extend .d-md-none;
@@ -10,6 +11,10 @@
         max-height: 0;
         overflow: hidden;
         &.active{
+            max-height: 100vh;
+        }
+        @media screen and (min-width: 768px){
+            width: auto;
             max-height: 100vh;
         }
     }
