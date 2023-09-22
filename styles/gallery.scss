@@ -1,0 +1,107 @@
+.gallery{
+    @extend .p-relative;
+    height: min(calc(100vh - 3rem), 480px);
+    &-item{
+        @extend .p-absolute, .cover;
+        opacity: 0;
+        transition: all 1s linear .25s;
+        &.active{
+            opacity: 1;
+        }
+    }
+    &-controls{
+        @extend .p-absolute, .col-9, .p-3;
+        bottom: 0;
+        left: 50%;
+        text-align: center;
+        transform: translateX(-50%);
+        button{
+            @extend .b-0, .br-4, .p-2 ;
+            &.active{
+                padding: .5rem 1.25rem;
+            }
+        }
+    }
+    & > button {
+        @extend .p-absolute, .b-0, .p-5, .fs-10;
+        top: 0;
+        bottom: 0;
+        color: #eee;
+        background-color: transparent;
+    }
+    .icon{
+        &-prev{
+            left: 0;
+            &::before{ content: '<'; }
+        }
+        &-next{
+            right: 0;
+            &::before{ content: '>'; }
+        }
+    }
+    button{
+        opacity: .6;
+        transition: all .25s ease-in;
+        &:hover{
+            opacity: 9;
+        }
+    }
+}
+
+@mixin colorize($limit, $range, $s, $l){
+    @for $i from 1 through $limit{
+        :nth-child(#{$i}){
+            background: linear-gradient(
+                to top left,
+                hsl($i * $range - 30, $s, $l),
+                hsl($i * $range * 2, $s, $l)
+    )   }   } 
+}
+@mixin bg-fill($images, $s: cover){
+    @for $i from 1 through length($images){
+        :nth-child(#{$i}){
+            background: black url("#{$path}/#{nth($images,$i)}") center/$s no-repeat;
+    } } 
+}
+$osx: 
+    "osx-big-sur-dark.jpg",
+    "osx-big-sur-light.jpg",
+    "osx-big-sur-night.jpg",
+    "osx-big-sur.jpg",
+    "osx-catalina-night.jpg",
+    "osx-catalina.jpg",
+    "osx-el-capitan.jpg",
+    "osx-high-sierra.jpg",
+    "osx-leopard.jpg",
+    "osx-lion.jpg",
+    "osx-mavericks.jpg",
+    "osx-mojave-night.jpg",
+    "osx-mojave.jpg",
+    "osx-monterrey-dark.jpg",
+    "osx-monterrey-light.jpg",
+    "osx-mountain-lion.jpg",
+    "osx-sierra.jpg",
+    "osx-snow-leopard.jpg",
+    "osx-tiger.jpg",
+    "osx-yosemite.jpg";
+
+$ubuntu:
+    "ubuntu-artful-aardvark.jpg",
+    "ubuntu-bionic-beaver.jpg",
+    "ubuntu-cosmic-cuttlefish.jpg",
+    "ubuntu-disco-dingo.jpg",
+    "ubuntu-eoan-ermine.jpg",
+    "ubuntu-focal-fossa.jpg",
+    "ubuntu-groovy-gorilla.jpg",
+    "ubuntu-hisurte-hippo.jpg",
+    "ubuntu-impish-Indri.jpg",
+    "ubuntu-jammy-jellyfish.jpg";
+.color-bg{
+    @include colorize(10, 36, 50%, 50%);
+}
+.ubuntu-bg{
+    @include bg-fill($ubuntu, contain);
+}
+.osx-bg{
+    @include bg-fill($osx);
+}
