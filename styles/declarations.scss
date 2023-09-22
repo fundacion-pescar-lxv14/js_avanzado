@@ -1,5 +1,6 @@
 $first: #da3;
 $second: #fea;
+$path: '../assets/bg';
 
 $col: 12;
 
@@ -21,18 +22,27 @@ $boxes:
     fs  font-size,
     col width,
 ;
+$fit: cover, contain, auto;
+$pos: top, right, center, bottom, left;
 $dir: start, center, end, space-around, space-between, space-evenly;
-$flexbox: (
+$properties: (
     d: ( display: (none, inline, block, inline-block, flex, inline-flex, grid, inline-grid, table,) ),
+    
+    p: (position: (static, relative, absolute, fixed, sticky)),
+    bgs: (background-size: ($fit)),
+    bgp: (background-position: ($pos)),
+    bga: (background-attachment: (scroll, fixed, local)),
+
+    fit: (object-fit: ($fit)),
     fj: ( justify-content: ($dir) ),
     ai: ( align-items: ($dir) ),
-    fw: ( flex-wrap: (wrap, nowrap, wrap-reverse)) ,
+    fw: ( flex-wrap: (wrap, nowrap, wrap-reverse)),
 )
 ;
 
 @each $vn, $vw in $media{
 
-@each $prop, $attributes in $flexbox{
+@each $prop, $attributes in $properties{
 @each $attr, $values in $attributes{
 @each $v in $values{
     @if $vw <= 576px{
@@ -70,4 +80,10 @@ $flexbox: (
 }
 .list-unstyled{
     list-style: none;
+}
+.cover{
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
 }
