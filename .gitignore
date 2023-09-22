@@ -1,0 +1,26 @@
+# temporales
+*.swp
+*.tmp
+*.temp
+*.txt
+
+# compiladores
+build/
+dist/
+*.exe
+*.sh
+*.bat
+*.map
+*.dev.*
+
+# configuracion
+.vscode/
+package*.json
+
+#documentacion
+logs/
+docs/
+
+#dependencias
+node_modules/
+libraries/
