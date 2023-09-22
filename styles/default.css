@@ -34,6 +34,82 @@
   display: table;
 }
 
+.p-static {
+  position: static;
+}
+
+.p-relative, .gallery {
+  position: relative;
+}
+
+.p-absolute, .gallery > button, .gallery-controls, .gallery-item {
+  position: absolute;
+}
+
+.p-fixed {
+  position: fixed;
+}
+
+.p-sticky, .nav {
+  position: sticky;
+}
+
+.bgs-cover {
+  background-size: cover;
+}
+
+.bgs-contain {
+  background-size: contain;
+}
+
+.bgs-auto {
+  background-size: auto;
+}
+
+.bgp-top {
+  background-position: top;
+}
+
+.bgp-right {
+  background-position: right;
+}
+
+.bgp-center {
+  background-position: center;
+}
+
+.bgp-bottom {
+  background-position: bottom;
+}
+
+.bgp-left {
+  background-position: left;
+}
+
+.bga-scroll {
+  background-attachment: scroll;
+}
+
+.bga-fixed {
+  background-attachment: fixed;
+}
+
+.bga-local {
+  background-attachment: local;
+}
+
+.fit-cover {
+  object-fit: cover;
+}
+
+.fit-contain {
+  object-fit: contain;
+}
+
+.fit-auto {
+  object-fit: auto;
+}
+
 .fj-start {
   justify-content: start;
 }
@@ -164,7 +240,7 @@
   border-radius: 0.75rem;
 }
 
-.br-4 {
+.br-4, .gallery-controls button {
   border-radius: 1rem;
 }
 
@@ -201,7 +277,7 @@
 }
 
 /* Propiedades de border-width */
-.b-0 {
+.b-0, .gallery > button, .gallery-controls button {
   border-width: 0rem;
 }
 
@@ -262,11 +338,11 @@
   padding: 0.25rem;
 }
 
-.p-2 {
+.p-2, .gallery-controls button {
   padding: 0.5rem;
 }
 
-.p-3, .nav {
+.p-3, .gallery-controls, .nav {
   padding: 0.75rem;
 }
 
@@ -274,7 +350,7 @@
   padding: 1rem;
 }
 
-.p-5 {
+.p-5, .gallery > button {
   padding: 1.25rem;
 }
 
@@ -453,7 +529,7 @@
   font-size: 2.25rem;
 }
 
-.fs-10 {
+.fs-10, .gallery > button {
   font-size: 2.5rem;
 }
 
@@ -502,7 +578,7 @@
   width: 66.6666666667%;
 }
 
-.col-9 {
+.col-9, .gallery-controls {
   width: 75%;
 }
 
@@ -561,6 +637,101 @@
 @media screen and (min-width: 768px) {
   .d-md-table {
     display: table;
+  }
+}
+@media screen and (min-width: 768px) {
+  .p-md-static {
+    position: static;
+  }
+}
+@media screen and (min-width: 768px) {
+  .p-md-relative {
+    position: relative;
+  }
+}
+@media screen and (min-width: 768px) {
+  .p-md-absolute {
+    position: absolute;
+  }
+}
+@media screen and (min-width: 768px) {
+  .p-md-fixed {
+    position: fixed;
+  }
+}
+@media screen and (min-width: 768px) {
+  .p-md-sticky {
+    position: sticky;
+  }
+}
+@media screen and (min-width: 768px) {
+  .bgs-md-cover {
+    background-size: cover;
+  }
+}
+@media screen and (min-width: 768px) {
+  .bgs-md-contain {
+    background-size: contain;
+  }
+}
+@media screen and (min-width: 768px) {
+  .bgs-md-auto {
+    background-size: auto;
+  }
+}
+@media screen and (min-width: 768px) {
+  .bgp-md-top {
+    background-position: top;
+  }
+}
+@media screen and (min-width: 768px) {
+  .bgp-md-right {
+    background-position: right;
+  }
+}
+@media screen and (min-width: 768px) {
+  .bgp-md-center {
+    background-position: center;
+  }
+}
+@media screen and (min-width: 768px) {
+  .bgp-md-bottom {
+    background-position: bottom;
+  }
+}
+@media screen and (min-width: 768px) {
+  .bgp-md-left {
+    background-position: left;
+  }
+}
+@media screen and (min-width: 768px) {
+  .bga-md-scroll {
+    background-attachment: scroll;
+  }
+}
+@media screen and (min-width: 768px) {
+  .bga-md-fixed {
+    background-attachment: fixed;
+  }
+}
+@media screen and (min-width: 768px) {
+  .bga-md-local {
+    background-attachment: local;
+  }
+}
+@media screen and (min-width: 768px) {
+  .fit-md-cover {
+    object-fit: cover;
+  }
+}
+@media screen and (min-width: 768px) {
+  .fit-md-contain {
+    object-fit: contain;
+  }
+}
+@media screen and (min-width: 768px) {
+  .fit-md-auto {
+    object-fit: auto;
   }
 }
 @media screen and (min-width: 768px) {
@@ -1212,6 +1383,101 @@
   }
 }
 @media screen and (min-width: 992px) {
+  .p-lg-static {
+    position: static;
+  }
+}
+@media screen and (min-width: 992px) {
+  .p-lg-relative {
+    position: relative;
+  }
+}
+@media screen and (min-width: 992px) {
+  .p-lg-absolute {
+    position: absolute;
+  }
+}
+@media screen and (min-width: 992px) {
+  .p-lg-fixed {
+    position: fixed;
+  }
+}
+@media screen and (min-width: 992px) {
+  .p-lg-sticky {
+    position: sticky;
+  }
+}
+@media screen and (min-width: 992px) {
+  .bgs-lg-cover {
+    background-size: cover;
+  }
+}
+@media screen and (min-width: 992px) {
+  .bgs-lg-contain {
+    background-size: contain;
+  }
+}
+@media screen and (min-width: 992px) {
+  .bgs-lg-auto {
+    background-size: auto;
+  }
+}
+@media screen and (min-width: 992px) {
+  .bgp-lg-top {
+    background-position: top;
+  }
+}
+@media screen and (min-width: 992px) {
+  .bgp-lg-right {
+    background-position: right;
+  }
+}
+@media screen and (min-width: 992px) {
+  .bgp-lg-center {
+    background-position: center;
+  }
+}
+@media screen and (min-width: 992px) {
+  .bgp-lg-bottom {
+    background-position: bottom;
+  }
+}
+@media screen and (min-width: 992px) {
+  .bgp-lg-left {
+    background-position: left;
+  }
+}
+@media screen and (min-width: 992px) {
+  .bga-lg-scroll {
+    background-attachment: scroll;
+  }
+}
+@media screen and (min-width: 992px) {
+  .bga-lg-fixed {
+    background-attachment: fixed;
+  }
+}
+@media screen and (min-width: 992px) {
+  .bga-lg-local {
+    background-attachment: local;
+  }
+}
+@media screen and (min-width: 992px) {
+  .fit-lg-cover {
+    object-fit: cover;
+  }
+}
+@media screen and (min-width: 992px) {
+  .fit-lg-contain {
+    object-fit: contain;
+  }
+}
+@media screen and (min-width: 992px) {
+  .fit-lg-auto {
+    object-fit: auto;
+  }
+}
+@media screen and (min-width: 992px) {
   .fj-lg-start {
     justify-content: start;
   }
@@ -1857,6 +2123,101 @@
 @media screen and (min-width: 1200px) {
   .d-xl-table {
     display: table;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .p-xl-static {
+    position: static;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .p-xl-relative {
+    position: relative;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .p-xl-absolute {
+    position: absolute;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .p-xl-fixed {
+    position: fixed;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .p-xl-sticky {
+    position: sticky;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .bgs-xl-cover {
+    background-size: cover;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .bgs-xl-contain {
+    background-size: contain;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .bgs-xl-auto {
+    background-size: auto;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .bgp-xl-top {
+    background-position: top;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .bgp-xl-right {
+    background-position: right;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .bgp-xl-center {
+    background-position: center;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .bgp-xl-bottom {
+    background-position: bottom;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .bgp-xl-left {
+    background-position: left;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .bga-xl-scroll {
+    background-attachment: scroll;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .bga-xl-fixed {
+    background-attachment: fixed;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .bga-xl-local {
+    background-attachment: local;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .fit-xl-cover {
+    object-fit: cover;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .fit-xl-contain {
+    object-fit: contain;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .fit-xl-auto {
+    object-fit: auto;
   }
 }
 @media screen and (min-width: 1200px) {
@@ -2508,6 +2869,101 @@
   }
 }
 @media screen and (min-width: 1400px) {
+  .p-xxl-static {
+    position: static;
+  }
+}
+@media screen and (min-width: 1400px) {
+  .p-xxl-relative {
+    position: relative;
+  }
+}
+@media screen and (min-width: 1400px) {
+  .p-xxl-absolute {
+    position: absolute;
+  }
+}
+@media screen and (min-width: 1400px) {
+  .p-xxl-fixed {
+    position: fixed;
+  }
+}
+@media screen and (min-width: 1400px) {
+  .p-xxl-sticky {
+    position: sticky;
+  }
+}
+@media screen and (min-width: 1400px) {
+  .bgs-xxl-cover {
+    background-size: cover;
+  }
+}
+@media screen and (min-width: 1400px) {
+  .bgs-xxl-contain {
+    background-size: contain;
+  }
+}
+@media screen and (min-width: 1400px) {
+  .bgs-xxl-auto {
+    background-size: auto;
+  }
+}
+@media screen and (min-width: 1400px) {
+  .bgp-xxl-top {
+    background-position: top;
+  }
+}
+@media screen and (min-width: 1400px) {
+  .bgp-xxl-right {
+    background-position: right;
+  }
+}
+@media screen and (min-width: 1400px) {
+  .bgp-xxl-center {
+    background-position: center;
+  }
+}
+@media screen and (min-width: 1400px) {
+  .bgp-xxl-bottom {
+    background-position: bottom;
+  }
+}
+@media screen and (min-width: 1400px) {
+  .bgp-xxl-left {
+    background-position: left;
+  }
+}
+@media screen and (min-width: 1400px) {
+  .bga-xxl-scroll {
+    background-attachment: scroll;
+  }
+}
+@media screen and (min-width: 1400px) {
+  .bga-xxl-fixed {
+    background-attachment: fixed;
+  }
+}
+@media screen and (min-width: 1400px) {
+  .bga-xxl-local {
+    background-attachment: local;
+  }
+}
+@media screen and (min-width: 1400px) {
+  .fit-xxl-cover {
+    object-fit: cover;
+  }
+}
+@media screen and (min-width: 1400px) {
+  .fit-xxl-contain {
+    object-fit: contain;
+  }
+}
+@media screen and (min-width: 1400px) {
+  .fit-xxl-auto {
+    object-fit: auto;
+  }
+}
+@media screen and (min-width: 1400px) {
   .fj-xxl-start {
     justify-content: start;
   }
@@ -3114,8 +3570,16 @@
   list-style: none;
 }
 
+.cover, .gallery-item {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
 /* Barra de Navegacion */
 .nav {
+  top: 0;
   background: linear-gradient(#da3, #fea);
 }
 .nav-menu {
@@ -3124,6 +3588,180 @@
 }
 .nav-menu.active {
   max-height: 100vh;
+}
+@media screen and (min-width: 768px) {
+  .nav-menu {
+    width: auto;
+    max-height: 100vh;
+  }
+}
+
+.gallery {
+  height: min(100vh - 3rem, 480px);
+}
+.gallery-item {
+  opacity: 0;
+  transition: all 1s linear 0.25s;
+}
+.gallery-item.active {
+  opacity: 1;
+}
+.gallery-controls {
+  bottom: 0;
+  left: 50%;
+  text-align: center;
+  transform: translateX(-50%);
+}
+.gallery-controls button.active {
+  padding: 0.5rem 1.25rem;
+}
+.gallery > button {
+  top: 0;
+  bottom: 0;
+  color: #eee;
+  background-color: transparent;
+}
+.gallery .icon-prev {
+  left: 0;
+}
+.gallery .icon-prev::before {
+  content: "<";
+}
+.gallery .icon-next {
+  right: 0;
+}
+.gallery .icon-next::before {
+  content: ">";
+}
+.gallery button {
+  opacity: 0.6;
+  transition: all 0.25s ease-in;
+}
+.gallery button:hover {
+  opacity: 9;
+}
+
+.color-bg :nth-child(1) {
+  background: linear-gradient(to top left, hsl(6deg, 50%, 50%), hsl(72deg, 50%, 50%));
+}
+.color-bg :nth-child(2) {
+  background: linear-gradient(to top left, hsl(42deg, 50%, 50%), hsl(144deg, 50%, 50%));
+}
+.color-bg :nth-child(3) {
+  background: linear-gradient(to top left, hsl(78deg, 50%, 50%), hsl(216deg, 50%, 50%));
+}
+.color-bg :nth-child(4) {
+  background: linear-gradient(to top left, hsl(114deg, 50%, 50%), hsl(288deg, 50%, 50%));
+}
+.color-bg :nth-child(5) {
+  background: linear-gradient(to top left, hsl(150deg, 50%, 50%), hsl(0deg, 50%, 50%));
+}
+.color-bg :nth-child(6) {
+  background: linear-gradient(to top left, hsl(186deg, 50%, 50%), hsl(72deg, 50%, 50%));
+}
+.color-bg :nth-child(7) {
+  background: linear-gradient(to top left, hsl(222deg, 50%, 50%), hsl(144deg, 50%, 50%));
+}
+.color-bg :nth-child(8) {
+  background: linear-gradient(to top left, hsl(258deg, 50%, 50%), hsl(216deg, 50%, 50%));
+}
+.color-bg :nth-child(9) {
+  background: linear-gradient(to top left, hsl(294deg, 50%, 50%), hsl(288deg, 50%, 50%));
+}
+.color-bg :nth-child(10) {
+  background: linear-gradient(to top left, hsl(330deg, 50%, 50%), hsl(0deg, 50%, 50%));
+}
+
+.ubuntu-bg :nth-child(1) {
+  background: black url("../assets/bg/ubuntu-artful-aardvark.jpg") center/contain no-repeat;
+}
+.ubuntu-bg :nth-child(2) {
+  background: black url("../assets/bg/ubuntu-bionic-beaver.jpg") center/contain no-repeat;
+}
+.ubuntu-bg :nth-child(3) {
+  background: black url("../assets/bg/ubuntu-cosmic-cuttlefish.jpg") center/contain no-repeat;
+}
+.ubuntu-bg :nth-child(4) {
+  background: black url("../assets/bg/ubuntu-disco-dingo.jpg") center/contain no-repeat;
+}
+.ubuntu-bg :nth-child(5) {
+  background: black url("../assets/bg/ubuntu-eoan-ermine.jpg") center/contain no-repeat;
+}
+.ubuntu-bg :nth-child(6) {
+  background: black url("../assets/bg/ubuntu-focal-fossa.jpg") center/contain no-repeat;
+}
+.ubuntu-bg :nth-child(7) {
+  background: black url("../assets/bg/ubuntu-groovy-gorilla.jpg") center/contain no-repeat;
+}
+.ubuntu-bg :nth-child(8) {
+  background: black url("../assets/bg/ubuntu-hisurte-hippo.jpg") center/contain no-repeat;
+}
+.ubuntu-bg :nth-child(9) {
+  background: black url("../assets/bg/ubuntu-impish-Indri.jpg") center/contain no-repeat;
+}
+.ubuntu-bg :nth-child(10) {
+  background: black url("../assets/bg/ubuntu-jammy-jellyfish.jpg") center/contain no-repeat;
+}
+
+.osx-bg :nth-child(1) {
+  background: black url("../assets/bg/osx-big-sur-dark.jpg") center/cover no-repeat;
+}
+.osx-bg :nth-child(2) {
+  background: black url("../assets/bg/osx-big-sur-light.jpg") center/cover no-repeat;
+}
+.osx-bg :nth-child(3) {
+  background: black url("../assets/bg/osx-big-sur-night.jpg") center/cover no-repeat;
+}
+.osx-bg :nth-child(4) {
+  background: black url("../assets/bg/osx-big-sur.jpg") center/cover no-repeat;
+}
+.osx-bg :nth-child(5) {
+  background: black url("../assets/bg/osx-catalina-night.jpg") center/cover no-repeat;
+}
+.osx-bg :nth-child(6) {
+  background: black url("../assets/bg/osx-catalina.jpg") center/cover no-repeat;
+}
+.osx-bg :nth-child(7) {
+  background: black url("../assets/bg/osx-el-capitan.jpg") center/cover no-repeat;
+}
+.osx-bg :nth-child(8) {
+  background: black url("../assets/bg/osx-high-sierra.jpg") center/cover no-repeat;
+}
+.osx-bg :nth-child(9) {
+  background: black url("../assets/bg/osx-leopard.jpg") center/cover no-repeat;
+}
+.osx-bg :nth-child(10) {
+  background: black url("../assets/bg/osx-lion.jpg") center/cover no-repeat;
+}
+.osx-bg :nth-child(11) {
+  background: black url("../assets/bg/osx-mavericks.jpg") center/cover no-repeat;
+}
+.osx-bg :nth-child(12) {
+  background: black url("../assets/bg/osx-mojave-night.jpg") center/cover no-repeat;
+}
+.osx-bg :nth-child(13) {
+  background: black url("../assets/bg/osx-mojave.jpg") center/cover no-repeat;
+}
+.osx-bg :nth-child(14) {
+  background: black url("../assets/bg/osx-monterrey-dark.jpg") center/cover no-repeat;
+}
+.osx-bg :nth-child(15) {
+  background: black url("../assets/bg/osx-monterrey-light.jpg") center/cover no-repeat;
+}
+.osx-bg :nth-child(16) {
+  background: black url("../assets/bg/osx-mountain-lion.jpg") center/cover no-repeat;
+}
+.osx-bg :nth-child(17) {
+  background: black url("../assets/bg/osx-sierra.jpg") center/cover no-repeat;
+}
+.osx-bg :nth-child(18) {
+  background: black url("../assets/bg/osx-snow-leopard.jpg") center/cover no-repeat;
+}
+.osx-bg :nth-child(19) {
+  background: black url("../assets/bg/osx-tiger.jpg") center/cover no-repeat;
+}
+.osx-bg :nth-child(20) {
+  background: black url("../assets/bg/osx-yosemite.jpg") center/cover no-repeat;
 }
 
 /*# sourceMappingURL=default.css.map */
