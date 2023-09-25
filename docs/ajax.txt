@@ -1,0 +1,1 @@
+ Asynchronous JavaScript and XML (AJAX) conjunto de herramientas que permiten realizar peticiones al servidor sin necesidad de recargar la página y permitiendole al usuario seguir navegando.

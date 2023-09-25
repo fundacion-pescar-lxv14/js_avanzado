@@ -1,0 +1,1 @@
+Aplicacion de una Sola Pagina (SPA) es el termino utilizado para describir a muchas de las web actuales que no requieren de redireccionamiento a otras paginas, sino que se trabaja todo el contenido desde un solo archivo, utilizando AJAX. En este tipo de aplicaciones se utilizan componentes, que se repiten dentro de la misma.
