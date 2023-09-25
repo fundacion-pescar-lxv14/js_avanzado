@@ -17,7 +17,7 @@ const datatypes = {
 */
 function createTable(title){
     const table = set('table');
-    table.innerHTML = `<caption>${title}<caption>
+    table.innerHTML = `<caption>${title}</caption>
         <thead>
             <tr><th>Tipo</th><th>Ejemplo</th></tr>
         </thead>

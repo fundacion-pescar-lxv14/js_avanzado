@@ -24,7 +24,7 @@ xhr.open('GET', 'docs/ajax.txt');
 // readyState 3
 function DOMload(content){
     section.innerHTML += `<p>${content}</p>`;
-    set(section, get('body'));
+    set(section, get('main'));
 }
 xhr.addEventListener('load', () => {
     // readyState 4
