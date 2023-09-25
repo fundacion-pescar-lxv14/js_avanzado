@@ -1,0 +1,11 @@
+form{
+    @extend .col-md-8, .col-lg-6;
+    margin: auto;
+    input,
+    textarea,
+    select,
+    button {
+        @extend .b-solid, .o-0, .br-1, .p-2;
+        border-width: .1rem;
+    }
+}   
