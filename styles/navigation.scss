@@ -3,6 +3,7 @@
     @extend .d-flex, .fj-space-between, .ai-center, .fw-wrap, .p-sticky, .p-3;
     top: 0;
     background: linear-gradient($first, $second);
+    z-index: 1;
     button.icon-toggle{
         @extend .d-md-none;
     }
