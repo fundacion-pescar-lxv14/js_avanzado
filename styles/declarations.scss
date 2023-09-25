@@ -17,7 +17,7 @@ $boxes:
     br  border-radius,
     b   border-width,
     p   padding,
-    o   outline,
+    o   outline-width,
     g   gap,
     fs  font-size,
     col width,
@@ -37,6 +37,8 @@ $properties: (
     fj: ( justify-content: ($dir) ),
     ai: ( align-items: ($dir) ),
     fw: ( flex-wrap: (wrap, nowrap, wrap-reverse)),
+
+    b: (border-style: (solid, groove, dotted, dashed))
 )
 ;
 

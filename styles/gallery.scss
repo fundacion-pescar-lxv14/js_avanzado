@@ -4,7 +4,7 @@
     &-item{
         @extend .p-absolute, .cover;
         opacity: 0;
-        transition: all 1s linear .25s;
+        transition: all .5s linear .25s;
         &.active{
             opacity: 1;
         }

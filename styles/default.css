@@ -170,6 +170,25 @@
   flex-wrap: wrap-reverse;
 }
 
+.b-solid, form input,
+form textarea,
+form select,
+form button {
+  border-style: solid;
+}
+
+.b-groove {
+  border-style: groove;
+}
+
+.b-dotted {
+  border-style: dotted;
+}
+
+.b-dashed {
+  border-style: dashed;
+}
+
 /* Propiedades de margin */
 .m-0, .nav-menu {
   margin: 0rem;
@@ -228,7 +247,10 @@
   border-radius: 0rem;
 }
 
-.br-1 {
+.br-1, form input,
+form textarea,
+form select,
+form button {
   border-radius: 0.25rem;
 }
 
@@ -338,7 +360,10 @@
   padding: 0.25rem;
 }
 
-.p-2, .gallery-controls button {
+.p-2, form input,
+form textarea,
+form select,
+form button, .gallery-controls button {
   padding: 0.5rem;
 }
 
@@ -382,57 +407,60 @@
   padding: 3rem;
 }
 
-/* Propiedades de outline */
-.o-0 {
-  outline: 0rem;
+/* Propiedades de outline-width */
+.o-0, form input,
+form textarea,
+form select,
+form button {
+  outline-width: 0rem;
 }
 
 .o-1 {
-  outline: 0.25rem;
+  outline-width: 0.25rem;
 }
 
 .o-2 {
-  outline: 0.5rem;
+  outline-width: 0.5rem;
 }
 
 .o-3 {
-  outline: 0.75rem;
+  outline-width: 0.75rem;
 }
 
 .o-4 {
-  outline: 1rem;
+  outline-width: 1rem;
 }
 
 .o-5 {
-  outline: 1.25rem;
+  outline-width: 1.25rem;
 }
 
 .o-6 {
-  outline: 1.5rem;
+  outline-width: 1.5rem;
 }
 
 .o-7 {
-  outline: 1.75rem;
+  outline-width: 1.75rem;
 }
 
 .o-8 {
-  outline: 2rem;
+  outline-width: 2rem;
 }
 
 .o-9 {
-  outline: 2.25rem;
+  outline-width: 2.25rem;
 }
 
 .o-10 {
-  outline: 2.5rem;
+  outline-width: 2.5rem;
 }
 
 .o-11 {
-  outline: 2.75rem;
+  outline-width: 2.75rem;
 }
 
 .o-12 {
-  outline: 3rem;
+  outline-width: 3rem;
 }
 
 /* Propiedades de gap */
@@ -809,6 +837,26 @@
     flex-wrap: wrap-reverse;
   }
 }
+@media screen and (min-width: 768px) {
+  .b-md-solid {
+    border-style: solid;
+  }
+}
+@media screen and (min-width: 768px) {
+  .b-md-groove {
+    border-style: groove;
+  }
+}
+@media screen and (min-width: 768px) {
+  .b-md-dotted {
+    border-style: dotted;
+  }
+}
+@media screen and (min-width: 768px) {
+  .b-md-dashed {
+    border-style: dashed;
+  }
+}
 /* Propiedades de margin */
 @media screen and (min-width: 768px) {
   .m-md-0 {
@@ -1073,70 +1121,70 @@
     padding: 3rem;
   }
 }
-/* Propiedades de outline */
+/* Propiedades de outline-width */
 @media screen and (min-width: 768px) {
   .o-md-0 {
-    outline: 0rem;
+    outline-width: 0rem;
   }
 }
 @media screen and (min-width: 768px) {
   .o-md-1 {
-    outline: 0.25rem;
+    outline-width: 0.25rem;
   }
 }
 @media screen and (min-width: 768px) {
   .o-md-2 {
-    outline: 0.5rem;
+    outline-width: 0.5rem;
   }
 }
 @media screen and (min-width: 768px) {
   .o-md-3 {
-    outline: 0.75rem;
+    outline-width: 0.75rem;
   }
 }
 @media screen and (min-width: 768px) {
   .o-md-4 {
-    outline: 1rem;
+    outline-width: 1rem;
   }
 }
 @media screen and (min-width: 768px) {
   .o-md-5 {
-    outline: 1.25rem;
+    outline-width: 1.25rem;
   }
 }
 @media screen and (min-width: 768px) {
   .o-md-6 {
-    outline: 1.5rem;
+    outline-width: 1.5rem;
   }
 }
 @media screen and (min-width: 768px) {
   .o-md-7 {
-    outline: 1.75rem;
+    outline-width: 1.75rem;
   }
 }
 @media screen and (min-width: 768px) {
   .o-md-8 {
-    outline: 2rem;
+    outline-width: 2rem;
   }
 }
 @media screen and (min-width: 768px) {
   .o-md-9 {
-    outline: 2.25rem;
+    outline-width: 2.25rem;
   }
 }
 @media screen and (min-width: 768px) {
   .o-md-10 {
-    outline: 2.5rem;
+    outline-width: 2.5rem;
   }
 }
 @media screen and (min-width: 768px) {
   .o-md-11 {
-    outline: 2.75rem;
+    outline-width: 2.75rem;
   }
 }
 @media screen and (min-width: 768px) {
   .o-md-12 {
-    outline: 3rem;
+    outline-width: 3rem;
   }
 }
 /* Propiedades de gap */
@@ -1313,7 +1361,7 @@
   }
 }
 @media screen and (min-width: 768px) {
-  .col-md-8 {
+  .col-md-8, form {
     width: 66.6666666667%;
   }
 }
@@ -1550,6 +1598,26 @@
 @media screen and (min-width: 992px) {
   .fw-lg-wrap-reverse {
     flex-wrap: wrap-reverse;
+  }
+}
+@media screen and (min-width: 992px) {
+  .b-lg-solid {
+    border-style: solid;
+  }
+}
+@media screen and (min-width: 992px) {
+  .b-lg-groove {
+    border-style: groove;
+  }
+}
+@media screen and (min-width: 992px) {
+  .b-lg-dotted {
+    border-style: dotted;
+  }
+}
+@media screen and (min-width: 992px) {
+  .b-lg-dashed {
+    border-style: dashed;
   }
 }
 /* Propiedades de margin */
@@ -1816,70 +1884,70 @@
     padding: 3rem;
   }
 }
-/* Propiedades de outline */
+/* Propiedades de outline-width */
 @media screen and (min-width: 992px) {
   .o-lg-0 {
-    outline: 0rem;
+    outline-width: 0rem;
   }
 }
 @media screen and (min-width: 992px) {
   .o-lg-1 {
-    outline: 0.25rem;
+    outline-width: 0.25rem;
   }
 }
 @media screen and (min-width: 992px) {
   .o-lg-2 {
-    outline: 0.5rem;
+    outline-width: 0.5rem;
   }
 }
 @media screen and (min-width: 992px) {
   .o-lg-3 {
-    outline: 0.75rem;
+    outline-width: 0.75rem;
   }
 }
 @media screen and (min-width: 992px) {
   .o-lg-4 {
-    outline: 1rem;
+    outline-width: 1rem;
   }
 }
 @media screen and (min-width: 992px) {
   .o-lg-5 {
-    outline: 1.25rem;
+    outline-width: 1.25rem;
   }
 }
 @media screen and (min-width: 992px) {
   .o-lg-6 {
-    outline: 1.5rem;
+    outline-width: 1.5rem;
   }
 }
 @media screen and (min-width: 992px) {
   .o-lg-7 {
-    outline: 1.75rem;
+    outline-width: 1.75rem;
   }
 }
 @media screen and (min-width: 992px) {
   .o-lg-8 {
-    outline: 2rem;
+    outline-width: 2rem;
   }
 }
 @media screen and (min-width: 992px) {
   .o-lg-9 {
-    outline: 2.25rem;
+    outline-width: 2.25rem;
   }
 }
 @media screen and (min-width: 992px) {
   .o-lg-10 {
-    outline: 2.5rem;
+    outline-width: 2.5rem;
   }
 }
 @media screen and (min-width: 992px) {
   .o-lg-11 {
-    outline: 2.75rem;
+    outline-width: 2.75rem;
   }
 }
 @media screen and (min-width: 992px) {
   .o-lg-12 {
-    outline: 3rem;
+    outline-width: 3rem;
   }
 }
 /* Propiedades de gap */
@@ -2046,7 +2114,7 @@
   }
 }
 @media screen and (min-width: 992px) {
-  .col-lg-6 {
+  .col-lg-6, form {
     width: 50%;
   }
 }
@@ -2293,6 +2361,26 @@
 @media screen and (min-width: 1200px) {
   .fw-xl-wrap-reverse {
     flex-wrap: wrap-reverse;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .b-xl-solid {
+    border-style: solid;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .b-xl-groove {
+    border-style: groove;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .b-xl-dotted {
+    border-style: dotted;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .b-xl-dashed {
+    border-style: dashed;
   }
 }
 /* Propiedades de margin */
@@ -2559,70 +2647,70 @@
     padding: 3rem;
   }
 }
-/* Propiedades de outline */
+/* Propiedades de outline-width */
 @media screen and (min-width: 1200px) {
   .o-xl-0 {
-    outline: 0rem;
+    outline-width: 0rem;
   }
 }
 @media screen and (min-width: 1200px) {
   .o-xl-1 {
-    outline: 0.25rem;
+    outline-width: 0.25rem;
   }
 }
 @media screen and (min-width: 1200px) {
   .o-xl-2 {
-    outline: 0.5rem;
+    outline-width: 0.5rem;
   }
 }
 @media screen and (min-width: 1200px) {
   .o-xl-3 {
-    outline: 0.75rem;
+    outline-width: 0.75rem;
   }
 }
 @media screen and (min-width: 1200px) {
   .o-xl-4 {
-    outline: 1rem;
+    outline-width: 1rem;
   }
 }
 @media screen and (min-width: 1200px) {
   .o-xl-5 {
-    outline: 1.25rem;
+    outline-width: 1.25rem;
   }
 }
 @media screen and (min-width: 1200px) {
   .o-xl-6 {
-    outline: 1.5rem;
+    outline-width: 1.5rem;
   }
 }
 @media screen and (min-width: 1200px) {
   .o-xl-7 {
-    outline: 1.75rem;
+    outline-width: 1.75rem;
   }
 }
 @media screen and (min-width: 1200px) {
   .o-xl-8 {
-    outline: 2rem;
+    outline-width: 2rem;
   }
 }
 @media screen and (min-width: 1200px) {
   .o-xl-9 {
-    outline: 2.25rem;
+    outline-width: 2.25rem;
   }
 }
 @media screen and (min-width: 1200px) {
   .o-xl-10 {
-    outline: 2.5rem;
+    outline-width: 2.5rem;
   }
 }
 @media screen and (min-width: 1200px) {
   .o-xl-11 {
-    outline: 2.75rem;
+    outline-width: 2.75rem;
   }
 }
 @media screen and (min-width: 1200px) {
   .o-xl-12 {
-    outline: 3rem;
+    outline-width: 3rem;
   }
 }
 /* Propiedades de gap */
@@ -3038,6 +3126,26 @@
     flex-wrap: wrap-reverse;
   }
 }
+@media screen and (min-width: 1400px) {
+  .b-xxl-solid {
+    border-style: solid;
+  }
+}
+@media screen and (min-width: 1400px) {
+  .b-xxl-groove {
+    border-style: groove;
+  }
+}
+@media screen and (min-width: 1400px) {
+  .b-xxl-dotted {
+    border-style: dotted;
+  }
+}
+@media screen and (min-width: 1400px) {
+  .b-xxl-dashed {
+    border-style: dashed;
+  }
+}
 /* Propiedades de margin */
 @media screen and (min-width: 1400px) {
   .m-xxl-0 {
@@ -3302,70 +3410,70 @@
     padding: 3rem;
   }
 }
-/* Propiedades de outline */
+/* Propiedades de outline-width */
 @media screen and (min-width: 1400px) {
   .o-xxl-0 {
-    outline: 0rem;
+    outline-width: 0rem;
   }
 }
 @media screen and (min-width: 1400px) {
   .o-xxl-1 {
-    outline: 0.25rem;
+    outline-width: 0.25rem;
   }
 }
 @media screen and (min-width: 1400px) {
   .o-xxl-2 {
-    outline: 0.5rem;
+    outline-width: 0.5rem;
   }
 }
 @media screen and (min-width: 1400px) {
   .o-xxl-3 {
-    outline: 0.75rem;
+    outline-width: 0.75rem;
   }
 }
 @media screen and (min-width: 1400px) {
   .o-xxl-4 {
-    outline: 1rem;
+    outline-width: 1rem;
   }
 }
 @media screen and (min-width: 1400px) {
   .o-xxl-5 {
-    outline: 1.25rem;
+    outline-width: 1.25rem;
   }
 }
 @media screen and (min-width: 1400px) {
   .o-xxl-6 {
-    outline: 1.5rem;
+    outline-width: 1.5rem;
   }
 }
 @media screen and (min-width: 1400px) {
   .o-xxl-7 {
-    outline: 1.75rem;
+    outline-width: 1.75rem;
   }
 }
 @media screen and (min-width: 1400px) {
   .o-xxl-8 {
-    outline: 2rem;
+    outline-width: 2rem;
   }
 }
 @media screen and (min-width: 1400px) {
   .o-xxl-9 {
-    outline: 2.25rem;
+    outline-width: 2.25rem;
   }
 }
 @media screen and (min-width: 1400px) {
   .o-xxl-10 {
-    outline: 2.5rem;
+    outline-width: 2.5rem;
   }
 }
 @media screen and (min-width: 1400px) {
   .o-xxl-11 {
-    outline: 2.75rem;
+    outline-width: 2.75rem;
   }
 }
 @media screen and (min-width: 1400px) {
   .o-xxl-12 {
-    outline: 3rem;
+    outline-width: 3rem;
   }
 }
 /* Propiedades de gap */
@@ -3601,7 +3709,7 @@
 }
 .gallery-item {
   opacity: 0;
-  transition: all 1s linear 0.25s;
+  transition: all 0.5s linear 0.25s;
 }
 .gallery-item.active {
   opacity: 1;
@@ -3762,6 +3870,16 @@
 }
 .osx-bg :nth-child(20) {
   background: black url("../assets/bg/osx-yosemite.jpg") center/cover no-repeat;
+}
+
+form {
+  margin: auto;
+}
+form input,
+form textarea,
+form select,
+form button {
+  border-width: 0.1rem;
 }
 
 /*# sourceMappingURL=default.css.map */

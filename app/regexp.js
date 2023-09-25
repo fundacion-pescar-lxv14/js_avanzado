@@ -41,7 +41,6 @@ regexp.test("C215714n")         // false
 regexp.test("Cristian Racedo")  // false
 regexp.test("CristianRacedo")   // true
 
-
 const 
     form = set('form'),
     username = set('input'),
@@ -50,7 +49,7 @@ const
     message = set('textarea'),
     submit = set('button');
 Object.assign(form,{
-    className: 'd-grid g-2'
+    className: 'd-grid g-2 p-3'
 })
 Object.assign(username, {
     placeholder: 'Nombre de Usuario',    
