@@ -19,10 +19,11 @@ async function getData({url, method = 'GET', callback }){
 }
 //#consultas asincronas
 //#funciones de renderizado 
+// Section principal
 const section = ({ title, content, callback} ) => `
     <h2 class="h3 text-center">${title}</h2>
     <div>${ callback(content) }</div>`;
-
+// Control de Errores
 const error = (e = 'No se ha Iniciado sesion') => section({ 
     title: 'Lo sentimos, ha ocurrido un error', 
     content: e, 
@@ -31,7 +32,7 @@ const error = (e = 'No se ha Iniciado sesion') => section({
             <button class="btn-close float-end"></button>
         </p>`
 });
-
+// Listado de Objetos
 function renderList(item, li=''){
     Object.keys(item).map(k => 
         li+= typeof item[k] == 'object' ? 
@@ -39,6 +40,7 @@ function renderList(item, li=''){
         `<li><strong>${k}:</strong> ${item[k]}</li>`)
     return `<ul>${li}</ul>`
 }
+// Lista de Usuarios
 function usersList(data, list = ''){
     data.map(item => list += `
         <li class="list-group-item | col-12 col-md-10 col-lg-8 | d-flex flex-wrap | mx-auto">
@@ -51,6 +53,7 @@ function usersList(data, list = ''){
     );
     return `<ul class="list-group">${list}</ul>`;
 }
+// Tareas del Usuario
 function userTodos(data, th = '', tr = '', td = '') {
     // Extraccion de Cabeceras de Tabla
     Object.keys(data[0]).map(t => th+=`<th>${t}</th>`)
@@ -75,24 +78,48 @@ function userTodos(data, th = '', tr = '', td = '') {
     </div>`
     : error() 
 }
-function userAlbums(){
-    if(control.user){
-
-    }
-    else{
-        error()
-    }
+function userAlbums(data){
+    return control.user ?
+    data.map(item => 
+    `<article>
+    </article>`
+    ).join('') : error()
+    
 }
-function userPosts(){
-    if(control.user){
-
-    }
-    else{
-        error()
-    }
+// Publicaciones del Usuario
+function userPosts(data, post = ''){
+    control.user ?
+    data.map(item => post +=
+    `<article id="post-${item.id}" class="card | col-md-8 mx-auto my-2">
+        <h3 class="card-header">${item.title}</h3>
+        <p class="card-body">${item.body}</p>
+        <footer class="card-footer ps-4 list-group list-group-flush">
+        </footer>
+    </article>`
+    ) : post += error()
+    return post;
 }
-function postComments(){
-
+// Comentarios por Publicacion
+async function getComments(){
+    // Captura de Articulos con id "post-n"
+    const posts = document.querySelectorAll('article[id^="post-"]');
+    posts.forEach(async (post) => {
+        let data = await fetch(`${jph}/comments?postId=${post.id.split('-')[1]}`);
+        data = await data.json();
+        data.map(item => post.querySelector('footer').innerHTML += 
+        `<article class="list-group-item">
+            <div class="row align-items-start">
+            <img alt="..." class="rounded-circle p-2 col-1 bg-dark">
+            <p class="col">
+                <strong>${item.name}</strong> 
+                ${item.body}
+                </p>
+            <div>
+            <address>
+                <a href="mailto:${item.email}">${item.email}</a>
+            </address>
+        </article>`
+    ) } )
 }
 
 //#funciones de renderizado
@@ -119,8 +146,10 @@ document.addEventListener('DOMContentLoaded', () => {
                     root.innerHTML = section({
                         title: el.innerHTML,
                         content: control[hash],
-                        callback:  window[e.target.getAttribute('data-callback')]
+                        callback: window[e.target.getAttribute('data-callback')]
                     });
+                    // Renderizado de Comentarios
+                    getComments();
                 }
             break;
             case 'BUTTON':
@@ -129,7 +158,6 @@ document.addEventListener('DOMContentLoaded', () => {
                         id = el.id.split('-');
                         control[id[0]] = id[1],
                         window.history.pushState({},'', `/${id[0]}/${id[1]}`);
-                    
                 }
             break;
             case 'INPUT':
