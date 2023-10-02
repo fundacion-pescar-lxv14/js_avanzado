@@ -67,7 +67,7 @@ function userTodos(data, th = '', tr = '', td = '') {
     // Renderizado condicional de Tabla 
     return control.user ?
     `<div class="container table-responsive">
-        <table class="table-striped table-hover table-sm">
+        <table class="table table-striped table-hover table-sm">
             <caption>Table de datos</caption>
             <thead><tr>${th}</tr></thead>
             <tbody>${tr}</tbody>
@@ -110,8 +110,9 @@ document.addEventListener('DOMContentLoaded', () => {
                     e.preventDefault();
                     window.history.pushState({},'',`/${hash}`);
                     // Obtenemos los datos para control
+                    const condition = hash !='users' && control.user > 0  ? `?userId=${control.user}` : '';
                     await getData({
-                        url:`${jph}/${hash}`, 
+                        url:`${jph}/${hash}/${condition}`, 
                         callback: (res) => { control[hash] = res }
                     })
                     // Renderizamos el contenido
