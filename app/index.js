@@ -1,24 +1,4 @@
-/* Paradigma de Prototipos */
-// Funcion Constructora (Contexto)
-function Clock (HH,mm,ss){
-    // Propiedades
-    this.HH = HH;
-    this.mm = mm;
-    this.ss = ss;
-}
-// Metodos
-Clock.prototype.showTime = function() {
-    return (`${this.get('HH')}:${this.get('mm')}:${this.get('ss')}`)
-}
-Clock.prototype.get = function (key){
-    return this[key] < 9 ? `0${this[key]}` : this[key]
-}
-Clock.prototype.addTime = function (key, max = 59) { 
-    this[key] = (this[key] < max ? this[key] + 1 : 0)
-}
-Clock.prototype.remTime = function (key, max = 59) { 
-    this[key] = (this[key] > 0 ? this[key] - 1 : max)
-}
+import Clock from './clock.js';
 
 // Instancia
 const timer = new Clock(2,59,40);
@@ -26,7 +6,7 @@ const cron = new Clock(0,0,0);
 let interval;
 
 function startTime(callback){
-    interval = setInterval(callback, 1);
+    interval = setInterval(callback, 1000);
 }
 function stopTime(){
     clearInterval(interval)
@@ -53,13 +33,13 @@ function Start({
 // 
 startTime(() => Start({
     obj: cron,
-    fn: 'addTime',
+    fn: 'add',
     next: console.log(cron.showTime())
 }));
 
 startTime(()=> Start({
     obj: timer, 
-    fn: 'remTime', 
+    fn: 'rem', 
     c: 59,
     next: console.log(timer.showTime())
 }));
