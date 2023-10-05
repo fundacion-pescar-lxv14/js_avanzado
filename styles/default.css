@@ -1,0 +1,122 @@
+@font-face {
+    src: url('../assets/fonts/digital.ttf');
+    font-family: 'clock';
+}
+/* Declaraciones */
+:root{
+/* Colores RGB*/
+    --light: 238, 238, 238;
+    --middle: 128, 128, 128;
+    --dark: 17, 17, 17;
+    /* Rojo */
+    --R-light: 238, 204, 170;
+    --R-middle: 204, 51, 51;
+    --R-dark: 68, 0, 0;
+    /* Verde */
+    --G-light: 51, 204, 102;
+    --G-middle: 17, 102, 51;
+    --G-dark: 0, 17, 0;
+    /* Azul */
+    --B-light: 170, 204, 238;
+    --B-middle: 51, 102, 204;
+    --B-dark: 34, 68, 136;
+/* Sombra */
+    /* Desplazamiento */
+    --shadow-sm: 0 0 .25rem;
+    --shadow: 0 0 .5rem;
+    --shadow-lg: 0 0 1rem;
+}
+/* Perspectiva */
+#root,
+#timer,
+.perspective{
+    perspective: max(150vh, 15rem);
+    perspective-origin: top center;
+}
+/* Representacion */
+[class*="d-"]{
+    display: var(--d);
+    gap: .5rem;
+}
+.d-flex{
+    --d: flex;
+}
+.d-grid{
+    --d: grid;
+}
+.d-flex > *{
+    --b: 0;
+    flex: 1 0 var(--b);
+}
+/* Campos de Formulario */
+input,
+textarea,
+select,
+button{
+    outline: none;
+    border-radius: .25rem;
+    border: .1rem solid;
+    padding: .5rem;
+}
+/* Reloj */
+#timer{
+    position: relative;
+    max-width: min(75vw, 540px);
+    margin: auto;
+    border-radius: .5rem;
+    border: 1.5rem solid rgb(var(--dark), .75);
+    box-shadow:
+        var(--shadow) rgb(var(--G-dark), .25), 
+        var(--shadow) rgb(var(--G-middle),.3) inset;
+    padding: 1rem;
+    background: rgb(var(--dark)) linear-gradient(
+        rgb(var(--G-light), .25),
+        rgb(var(--G-dark), .25)
+    );
+    transform: rotateX(10deg);
+}
+#timer::before{
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: min(25%, 270px);
+    border-radius: .5rem;
+    background-color: rgb(var(--dark), .5);
+    box-shadow: var(--shadow-lg) rgb(var(--dark));
+    transform: rotateX(90deg);
+}
+#timer *{
+    color: rgb(var(--G-light));
+    text-shadow: 
+        var(--shadow-sm) rgb(var(--G-dark)), 
+        var(--shadow-lg) rgb(var(--G-light));
+    font: normal min(calc(2vw + 1rem), 5rem) 'clock';
+}
+#timer :is(.btn,.form-control){
+    background: rgb(var(--G-dark),.9) 
+    linear-gradient(
+        rgb(var(--G-middle), .5),
+        rgb(var(--G-dark), .25)
+    );
+    box-shadow: 
+        var(--shadow-sm) rgb(var(--G-light), .5) inset,
+        var(--shadow-sm) rgb(var(--G-dark));
+}
+#timer :is(h2, p){
+    margin: 0;
+    line-height: .8;
+    font-size: min(calc(5vw + 1rem), 8rem);
+}
+#timer :is(.btn, .form-control):hover{
+    background-color: #242;
+}
+#timer :is(.btn, .form-control):active{
+    text-shadow: 
+        var(--shadow-sm) rgb(var(--G-middle), .5),
+        var(--shadow-sm) rgb(var(--G-dark));
+    box-shadow: 
+        var(--shadow-sm) rgb(var(--G-middle), .5) inset,
+        var(--shadow-sm) rgb(var(--G-dark));
+}
