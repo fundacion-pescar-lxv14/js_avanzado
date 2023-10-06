@@ -25,16 +25,19 @@
     --shadow-sm: 0 0 .25rem;
     --shadow: 0 0 .5rem;
     --shadow-lg: 0 0 1rem;
+/* Damas */
+    --color: #c33;
+    --checker: (min(4rem, 5vh) + .5rem);
 }
 /* Perspectiva */
 #root,
-#timer,
+section,
 .perspective{
     perspective: max(150vh, 15rem);
     perspective-origin: top center;
 }
 #root > section:not(:first-child){
-    margin-top: 20vh;
+    margin-top: calc(10vh + 2vw);
     min-height: 100vh;
 }
 /* Representacion */
@@ -47,6 +50,10 @@
 }
 .d-grid{
     --d: grid;
+}
+table,
+.d-table{
+    --d: table;
 }
 .d-flex > *{
     --b: 0;
@@ -117,7 +124,7 @@ button{
     font-size: min(calc(5vw + 1rem), 8rem);
 }
 #timer :is(.btn, .form-control):hover{
-    background-color: #242;
+    background-color: rgb(var(--G-middle));
 }
 #timer :is(.btn, .form-control):active{
     text-shadow: 
@@ -127,22 +134,50 @@ button{
         var(--shadow-sm) rgb(var(--G-middle), .5) inset,
         var(--shadow-sm) rgb(var(--G-dark));
 }
+/* Tablero */
+.box,
+[class*="board-"]{
+    width: calc( var(--checker) * 8);
+    margin: auto;
+    border: 1rem solid #421;
+    border-radius: .5rem;  
+    background: var(--color);
+}
+.box{
+    min-width: calc(var(--checker) * 8);
+    min-height: calc(var(--checker) * 2);
+    gap: .5rem;
+    margin: 1rem auto;
+    padding: 1rem;
+    background: linear-gradient(
+        hsl(30, 50%, 50%),
+        hsl(10, 50%, 30%)
+    );
+    box-shadow: 
+        0 .5rem 1rem #3338,
+        -.5rem .5rem #210 inset,
+        .5rem .5rem #210 inset;
+    transform: rotateX(15deg);
+}
+.board-black{
+    --color: #333;
+}
+.board-light{
+    --color: #eee;
+}
+.board-red{
+    --color: #833;
+}
 /* Damas */
-.board{
-    background-color: #36c8;
-}
-.board :is(td,th){
-    width: 4rem;
-    height: 4rem;
-}
-.board tr:nth-child(odd) td:nth-child(odd),
-.board tr:nth-child(even) td:nth-child(even){
-    background-color: #3338;
+[class*="board-"] tr:nth-child(odd) td:nth-child(even),
+[class*="board-"] tr:nth-child(even) td:nth-child(odd){
+    background-color: #eee8;
+    padding: calc(var(--checker) / 2 + .2rem);
 }
 [class*="checker-"]{
-    width: 4rem;
+    width: calc(var(--checker));
     border-radius: 50%;
-    background-color: #c33;
+    background-color: var(--color);
 }
 .checker-black{
     filter: saturate(0%) brightness(25%);
