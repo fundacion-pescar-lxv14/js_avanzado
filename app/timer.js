@@ -16,9 +16,8 @@ const clockTemplate = (name, time) => `
             <button id="stop" class="btn">Detener</button>
         </div>
     </section>`;
-
 const clockActions = () => {
-    let obj = new Clock(0,0,0);
+    let obj = new Clock(0,0,1);
     const 
         start = d.getElementById('start'),
         stop = d.getElementById('stop');

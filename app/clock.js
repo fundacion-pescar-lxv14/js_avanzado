@@ -11,7 +11,7 @@ Clock.prototype.showTime = function() {
     return (`${this.get('HH')}:${this.get('mm')}:${this.get('ss')}`)
 }
 Clock.prototype.get = function (key){
-    return this[key] < 9 ? `0${this[key]}` : this[key]
+    return this[key] <= 9 ? `0${this[key]}` : this[key]
 }
 // Setters
 Clock.prototype.add = function (key, max = 59) { 
