@@ -33,6 +33,10 @@
     perspective: max(150vh, 15rem);
     perspective-origin: top center;
 }
+#root > section:not(:first-child){
+    margin-top: 20vh;
+    min-height: 100vh;
+}
 /* Representacion */
 [class*="d-"]{
     display: var(--d);
@@ -122,4 +126,39 @@ button{
     box-shadow: 
         var(--shadow-sm) rgb(var(--G-middle), .5) inset,
         var(--shadow-sm) rgb(var(--G-dark));
+}
+/* Damas */
+.board{
+    background-color: #36c8;
+}
+.board :is(td,th){
+    width: 4rem;
+    height: 4rem;
+}
+.board tr:nth-child(odd) td:nth-child(odd),
+.board tr:nth-child(even) td:nth-child(even){
+    background-color: #3338;
+}
+[class*="checker-"]{
+    width: 4rem;
+    border-radius: 50%;
+    background-color: #c33;
+}
+.checker-black{
+    filter: saturate(0%) brightness(25%);
+}
+.checker-white{
+    filter: grayscale(100%) brightness(250%);
+}
+.checker-cyan{
+    filter: hue-rotate(180deg);
+}
+.checker-blue{
+    filter: hue-rotate(240deg);
+}
+.checker-green{
+    filter: hue-rotate(120deg);
+}
+.checker-yellow{
+    filter: hue-rotate(60deg) saturate(100%) brightness(200%);
 }
