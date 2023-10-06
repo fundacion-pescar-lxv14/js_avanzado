@@ -2,6 +2,13 @@ import { d, root } from './global.js';
 import Clock from './clock.js';
 import { startTime, Start, stopTime } from './interval.js'
 
+const clockFields = (id, max = 59, type = 'number') => `
+<input id="${id}" 
+    class="btn btn-time" 
+    min="0" max="${max}" 
+    value="0"
+    type="${type}"/>`
+
 const clockTemplate = (name, time) => `
     <section id="timer" class="d-grid">
         <h2>${name}</h2>

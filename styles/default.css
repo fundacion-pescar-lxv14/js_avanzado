@@ -58,6 +58,9 @@ button{
     border: .1rem solid;
     padding: .5rem;
 }
+.btn-time{
+    width: calc(30% - .5rem);
+}
 /* Reloj */
 #timer{
     position: relative;
