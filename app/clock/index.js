@@ -1,4 +1,4 @@
-import { d, root } from './global.js';
+import { d, root } from '../global.js';
 import Clock from './clock.js';
 import { startTime, Start, stopTime } from './interval.js'
 
