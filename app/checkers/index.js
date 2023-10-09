@@ -31,17 +31,22 @@ function board(){
         const tr = d.createElement('tr');
         for(let cel = 1; cel <= 8; cel++){
             const td = Object.assign(d.createElement('td'), {
-                id: `${row}-${cel}`,
+                id: `${row}${cel}`,
                 ondragover:(e) => e.preventDefault(),
                 ondrop: (e) => {
                     const id = e.dataTransfer.getData('selected'),
-                        [r,c] = td.id.split('-')
-                    if( // filas y columnas pares (22, 24, 26, 28)
-                        r % 2 == 0 && c % 2 == 0 ||
+                        [r,c] = td.id.split('')
+                    if ((
+                        // filas y columnas pares (22, 24, 26, 28)
+                        coord(r,c) || 
                         // filas y columnas impares (11, 13, 15, 17) 
-                        r % 2 == 1 && c % 2 == 1 )   
+                        coord(r,c,1) ) && 
+                        // La celda no debe tener hijos
+                        empty(e.target) &&
+                        // Debe ser una celda
+                        isCell(e.target)
                     // Cambio de Posicion de la Ficha
-                    td.append(d.getElementById(id))
+                    )   e.target.append(d.getElementById(id))
                 }
             });
             tr.append(td)
@@ -50,6 +55,16 @@ function board(){
     }
     table.append(tbody);
     return table;
+}
+function isCell(element){
+    return element.tagName === 'TD'
+}
+function coord(r,c, n = 0){
+    return r % 2 == n && c % 2 == n
+}
+
+function empty(element){
+    return element.children.length === 0
 }
 
 function Checkers(){
