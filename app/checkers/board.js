@@ -3,6 +3,7 @@ import {
     coord,
     empty, 
     isCell,
+    move
 } from './conditions.js';
 
 function createCell(row, col){
@@ -11,23 +12,26 @@ function createCell(row, col){
         ondragover:(e) => e.preventDefault(),
         ondrop: (e) => {
             const id = e.dataTransfer.getData('selected'),
+                checker = d.getElementById(id),
+                p = checker.classList.contains('checker-red') ? -1 : 1,
+                from = checker.parentNode.id,
                 [r,c] = e.target.id.split('')
-            if ((
-                // filas y columnas pares (22, 24, 26, 28)
-                coord(r,c) || 
-                // filas y columnas impares (11, 13, 15, 17) 
-                coord(r,c,1) ) && 
-                // La celda no debe tener hijos
-                empty(e.target) &&
+            if (
+                (coord(r,c) || coord(r,c,1) ) && 
+                ( empty(e.target) && move(from, e.target.id, p) ) &&
+                ( true ) &&
                 // Debe ser una celda
-                isCell(e.target)
+                isCell(e.target)                
             // Cambio de Posicion de la Ficha
-            )   e.target.append(d.getElementById(id))
+            )   e.target.append(checker)
         }
 })}
 
 function board(){
-    const table = Object.assign(d.createElement('table'), { className: 'board-red'})
+    const table = Object.assign(d.createElement('table'), { 
+        id: 'checkers-board',
+        className: 'board-red'
+    })
     const tbody = d.createElement('tbody');
     for (let row = 1; row <= 8; row++) {
         const tr = d.createElement('tr');
