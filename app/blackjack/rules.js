@@ -6,7 +6,7 @@ class Rules {
         this.losses = losses || 0
     }
     newCard(card){
-        this.score <= 11 && card == 11 ? 
+        this.score >= 11 && card == 11 ? 
             this.score++ :
             this.score+= card
         
@@ -31,7 +31,8 @@ class Rules {
         this.score = 0;
     }
     restart(){
-        this = new Rules();
+        this.score = 0;
+        this.money = 1000;
     }
 }
 
