@@ -10,17 +10,19 @@ const clockFields = (id, max = 59, type = 'number') => `
     type="${type}"/>`
 
 const clockTemplate = (name, time) => `
-    <section id="timer" class="d-grid">
-        <h2>${name}</h2>
-        <select class="form-control">
-            <option value="rem">Temporizador</option>
-            <option value="add" selected>Cronometro</option>
-        </select>
-        <p>HH:MM:ss</p>
-        <p class="clock">${time}</p>
-        <div class="d-flex">
-            <button id="start" class="btn">Iniciar</button>
-            <button id="stop" class="btn">Detener</button>
+    <section id="timer" class="perspective">
+        <div class="d-flex clock">
+            <h2>${name}</h2>
+            <select class="form-control">
+                <option value="rem">Temporizador</option>
+                <option value="add" selected>Cronometro</option>
+            </select>
+            <p>HH:MM:ss</p>
+            <p>${time}</p>
+            <div class="d-flex">
+                <button id="start" class="btn">Iniciar</button>
+                <button id="stop" class="btn">Detener</button>
+            </div>
         </div>
     </section>`;
 const clockActions = () => {
@@ -46,10 +48,10 @@ const clockActions = () => {
         d.querySelector('.clock').innerHTML = obj.showTime()
     }
 }
-function renderClock(){
+function Timer(){
     // Instancia de Clock
     root.innerHTML += clockTemplate('Reloj', '00:00:00');
     clockActions();
 }
 
-export default renderClock;
+export default Timer;
