@@ -245,13 +245,27 @@ nav a:hover{
     background-color: #eee;
     box-shadow: var(--shadow-sm) rgb(var(--B-dark));
     transition: all .5s ease;
+    transform: rotateY(180deg);
 }
 .card:hover{
     background-color: #ffe;
     box-shadow: var(--shadow-lg) rgb(var(--B-light));
+    transform: translateY(50%);
 }
 .card.red{
     color: rgb(var(--R-middle))   
+}
+.card-space{
+    position: relative;
+    flex: 0 0 4.5rem;
+    width: 4.5rem;
+    height: 6.5rem;
+    border: 2px solid rgb(var(--B-dark));
+}
+.card-space .card{
+    top: 0;
+    left: 0;
+    transform: scale(1)
 }
 .card .type{
     position: absolute;
@@ -274,4 +288,11 @@ nav a:hover{
     bottom: 0;
     right: 0;
     transform: rotate(180deg);
+}
+.gamemat{
+    padding: 2.5rem 1.5rem;
+    background: linear-gradient(
+        rgb(var(--G-light), .5),
+        rgb(var(--G-middle), .5)
+    );
 }
