@@ -232,3 +232,37 @@ nav a:hover{
 .checker-yellow{
     filter: hue-rotate(60deg) saturate(100%) brightness(200%);
 }
+/* Cartas */
+.card{
+    position: relative;
+    width: 4rem;
+    height: 6rem;
+    border-radius: .5rem;
+    padding: 1rem;
+    box-shadow: var(--shadow) rgb(var(--B-dark));
+}
+.card.red{
+    color: rgb(var(--R-middle))   
+}
+.card .type{
+    position: absolute;
+    top:  -.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 2rem;
+}
+.card::before,
+.card::after{
+    content: attr(data-number);
+    position: absolute;
+    padding: .5rem;
+}
+.card::before{
+    top: 0;
+    left: 0;
+}
+.card::after{
+    bottom: 0;
+    right: 0;
+    transform: rotate(180deg);
+}
