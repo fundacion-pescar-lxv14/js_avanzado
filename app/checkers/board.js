@@ -16,10 +16,9 @@ function createCell(row, col){
                 p = checker.classList.contains('checker-red') ? -1 : 1,
                 from = checker.parentNode.id,
                 [r,c] = e.target.id.split('')
-            if (
-                (coord(r,c) || coord(r,c,1) ) && 
-                ( empty(e.target) && move(from, e.target.id, p) ) &&
-                ( true ) &&
+            if  (   ( coord(r,c) || coord(r,c,1) ) && 
+                (   ( empty(e.target) && move(from, e.target.id, p) ) ||
+                    ( true ) ) &&
                 // Debe ser una celda
                 isCell(e.target)                
             // Cambio de Posicion de la Ficha

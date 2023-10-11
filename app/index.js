@@ -1,7 +1,9 @@
+import Nav from './nav/index.js';
 import Checkers from './checkers/index.js';
-import RenderClock from './clock/index.js';
+import Timer from './clock/index.js';
 // IFFE (Inmediatly Invoker Function Expression)
 (function () {
-    RenderClock();
+    Timer();
     Checkers();
+    root.append(Nav());
 })()

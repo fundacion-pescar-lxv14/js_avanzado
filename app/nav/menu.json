@@ -1,0 +1,17 @@
+[
+    {
+        "className": "fa fa-clock",
+        "text": "reloj",
+        "url": "timer"
+    },
+    {
+        "className": "fa fa-circle",
+        "text": "damas",
+        "url": "checkers"
+    },
+    {
+        "className": "fa fa-cards",
+        "text": "black jack",
+        "url": "blackjack"
+    }
+]

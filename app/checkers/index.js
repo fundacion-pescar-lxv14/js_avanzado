@@ -5,7 +5,10 @@ import order from './order.js';
 import { read, write} from '../storage.js';
 
 function Checkers(){
-    const section = Object.assign(d.createElement('section'), {className: "d-grid"});
+    const section = Object.assign(d.createElement('section'), {
+        id: 'checkers',
+        className: "d-grid"
+    });
     section.append(
         board(),
         Object.assign(d.createElement('button'), {
