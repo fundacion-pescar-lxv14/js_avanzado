@@ -29,16 +29,14 @@
     --color: #c33;
     --checker: (min(4rem, 5vh) + .5rem);
 }
+*{
+    box-sizing: border-box;
+}
 /* Perspectiva */
-#root,
 section,
 .perspective{
-    perspective: max(150vh, 15rem);
+    perspective: 5rem;
     perspective-origin: top center;
-}
-#root > section:not(:first-child){
-    margin-top: calc(10vh + 2vw);
-    min-height: 100vh;
 }
 /* Representacion */
 [class*="d-"]{
@@ -72,10 +70,25 @@ button{
 .btn-time{
     width: calc(30% - .5rem);
 }
+/* Navegacion */
+nav{
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+}
+/* Estilo Condicional */
+#root > section {
+    display: none;
+}
+#root > section:target{
+    display: var(--d);
+}
 /* Reloj */
-#timer{
-    position: relative;
-    max-width: min(75vw, 540px);
+.clock {
+    display: flex;
+    flex-direction: column;
+    max-width: 720px;
     margin: auto;
     border-radius: .5rem;
     border: 1.5rem solid rgb(var(--dark), .75);
@@ -87,9 +100,9 @@ button{
         rgb(var(--G-light), .25),
         rgb(var(--G-dark), .25)
     );
-    transform: rotateX(10deg);
+    transform: rotateX(15deg);
 }
-#timer::before{
+.clock::before{
     content: '';
     position: absolute;
     top: 100%;
@@ -99,16 +112,16 @@ button{
     border-radius: .5rem;
     background-color: rgb(var(--dark), .5);
     box-shadow: var(--shadow-lg) rgb(var(--dark));
-    transform: rotateX(90deg);
+    transform: rotateX(15deg);
 }
-#timer *{
+.clock *{
     color: rgb(var(--G-light));
     text-shadow: 
         var(--shadow-sm) rgb(var(--G-dark)), 
         var(--shadow-lg) rgb(var(--G-light));
     font: normal min(calc(2vw + 1rem), 5rem) 'clock';
 }
-#timer :is(.btn,.form-control){
+.clock :is(.btn,.form-control){
     background: rgb(var(--G-dark),.9) 
     linear-gradient(
         rgb(var(--G-middle), .5),
@@ -118,15 +131,15 @@ button{
         var(--shadow-sm) rgb(var(--G-light), .5) inset,
         var(--shadow-sm) rgb(var(--G-dark));
 }
-#timer :is(h2, p){
+.clock :is(h2, p){
     margin: 0;
     line-height: .8;
     font-size: min(calc(5vw + 1rem), 8rem);
 }
-#timer :is(.btn, .form-control):hover{
+.clock :is(.btn, .form-control):hover{
     background-color: rgb(var(--G-middle));
 }
-#timer :is(.btn, .form-control):active{
+.clock :is(.btn, .form-control):active{
     text-shadow: 
         var(--shadow-sm) rgb(var(--G-middle), .5),
         var(--shadow-sm) rgb(var(--G-dark));
