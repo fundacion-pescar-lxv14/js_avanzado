@@ -80,6 +80,7 @@ nav{
     position: fixed;
     bottom: 0;
     left: 0;
+    z-index: 1;
     width: 100%;
     gap: .5rem;
     padding: 1rem;
@@ -234,12 +235,20 @@ nav a:hover{
 }
 /* Cartas */
 .card{
-    position: relative;
+    position: absolute;
+    top: 1.5rem;
+    left: 1.5rem;
     width: 4rem;
     height: 6rem;
     border-radius: .5rem;
     padding: 1rem;
-    box-shadow: var(--shadow) rgb(var(--B-dark));
+    background-color: #eee;
+    box-shadow: var(--shadow-sm) rgb(var(--B-dark));
+    transition: all .5s ease;
+}
+.card:hover{
+    background-color: #ffe;
+    box-shadow: var(--shadow-lg) rgb(var(--B-light));
 }
 .card.red{
     color: rgb(var(--R-middle))   
