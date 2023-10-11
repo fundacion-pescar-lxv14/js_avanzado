@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu');
 @font-face {
     src: url('../assets/fonts/digital.ttf');
     font-family: 'clock';
@@ -31,12 +32,15 @@
 }
 *{
     box-sizing: border-box;
+    font-family: 'Ubuntu', 'Century Gothic', sans-serif;
 }
 /* Perspectiva */
 section,
 .perspective{
-    perspective: 5rem;
+    min-height: 100vh;
+    perspective: min(250vh, 25rem);
     perspective-origin: top center;
+    margin-bottom: 5rem;
 }
 /* Representacion */
 [class*="d-"]{
@@ -76,6 +80,24 @@ nav{
     position: fixed;
     bottom: 0;
     left: 0;
+    width: 100%;
+    gap: .5rem;
+    padding: 1rem;
+    box-shadow: 0 0 .5rem rgb(var(--B-dark));
+    background: linear-gradient(
+        rgb(var(--B-light)),
+        rgb(var(--B-dark))
+    );
+}
+nav a{
+    color: #ccc;
+    text-decoration: none;
+    text-transform: uppercase;
+    text-shadow: 0 0 .5rem rgb(var(--B-dark));
+}
+nav a.active,
+nav a:hover{
+    color: #eee;
 }
 /* Estilo Condicional */
 #root > section {
@@ -170,7 +192,7 @@ nav{
         0 .5rem 1rem #3338,
         -.5rem .5rem #210 inset,
         .5rem .5rem #210 inset;
-    transform: rotateX(15deg);
+    transform: rotateX(15deg) scale(.8);
 }
 .board-black{
     --color: #333;
