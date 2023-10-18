@@ -4,7 +4,7 @@ const stop = () => game.score >= 21;
 
 function updateScore() {
     const box = document.querySelector('#databox');
-    box.innerHTML = score().innerHTML;
+    box.innerHTML = Score().innerHTML;
 }
 // Eventos de Botones
 function Actions(){
