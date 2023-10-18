@@ -61,6 +61,21 @@ table,
     --b: 0;
     flex: 1 0 var(--b);
 }
+/* Reinicio */
+body,
+.unstyled{
+    margin: 0;
+}
+.unstyled{
+    padding: 0;
+}
+/* Estilos */
+.unstyled{
+    text-decoration: none;
+}
+.unstyled{
+    list-style: none;
+}
 /* Campos de Formulario */
 input,
 textarea,
@@ -263,8 +278,8 @@ nav a:hover{
     border: 2px solid rgb(var(--B-dark));
 }
 .card-space .card{
-    top: 0;
-    left: 0;
+    top: .15rem;
+    left: .15rem;
     transform: scale(1)
 }
 .card .type{
@@ -295,4 +310,16 @@ nav a:hover{
         rgb(var(--G-light), .5),
         rgb(var(--G-middle), .5)
     );
+}
+
+#databox{
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    z-index: 1;
+    opacity: .8;
+    border-radius: .5rem;
+    padding: 1rem;
+    color: #eee;
+    background-color: rgb(var(--B-dark));
 }
