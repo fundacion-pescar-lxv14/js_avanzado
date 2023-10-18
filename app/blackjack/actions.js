@@ -1,10 +1,10 @@
 import { Box, Table, Score } from './render.js';
 import { game } from './rules.js';
-const stop = () => game.Score >= 21;
+const stop = () => game.score >= 21;
 
 function updateScore() {
     const box = document.querySelector('#databox');
-    box.innerHTML = Score().innerHTML;
+    box.innerHTML = score().innerHTML;
 }
 // Eventos de Botones
 function Actions(){
