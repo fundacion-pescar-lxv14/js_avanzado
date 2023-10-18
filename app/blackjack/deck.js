@@ -20,4 +20,4 @@ function shuffle(arr){
     return arr
 }
 
-export default Deck();
+export default Deck;
