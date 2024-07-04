@@ -1,5 +1,5 @@
 import { d } from '../global.js';
-import menu from './menu.json' assert { type: 'json' };
+import menu from './menu.json' with { type: 'json' };
 
 export const Link = ({text, url, className}) => Object.assign( d.createElement('a'),{
     className,

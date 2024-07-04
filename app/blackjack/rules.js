@@ -1,9 +1,9 @@
 class Rules {
     constructor(score = 0, money = 1000, wins = 0, loses = 0){
-        this.score = score || 0
-        this.money = money || 1000
-        this.wins = wins || 0
-        this.loses = loses || 0
+        this.score = score
+        this.money = money
+        this.wins = wins
+        this.loses = loses
     }
     newCard(card){
         this.score >= 11 && card == 11 ? 
